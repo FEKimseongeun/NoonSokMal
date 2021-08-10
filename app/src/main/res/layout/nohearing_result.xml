@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NoHearingResultActivity">
+    <!--청각장애인 결과 도출화면-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:elevation="20dp"
+            android:src="@drawable/logo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginBottom="-5dp"
+            android:layout_marginRight="-5dp"
+            android:layout_marginTop="100dp"
+            android:orientation="vertical"
+            android:background="@drawable/corner_round2">
+
+            <!--따옴표 들어가야함-->
+            <View
+                android:id="@+id/double_quot"
+                android:layout_width="335dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="38dp"
+                android:layout_marginTop="150dp"
+                android:layout_marginBottom="30dp">
+
+            </View>
+
+            <TextView
+                android:id="@+id/result_Text_box"
+                android:text="hi"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginRight="35dp"
+                android:layout_marginLeft="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp" />
+
+            <!--수어 영상 출력-->
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginLeft="35dp"
+                android:layout_gravity="center">
+
+
+            </fragment>
+
+            <Button
+                android:id="@+id/replay_button"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="35dp"
+                android:backgroundTint="@color/second_button"
+                android:text="다시보기"
+                app:icon="@android:drawable/ic_lock_silent_mode_off" />
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+</LinearLayout>

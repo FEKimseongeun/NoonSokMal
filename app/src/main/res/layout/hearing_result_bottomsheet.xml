@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HearingResultActivity">
+    <!--비청각장애인 결과 도출화면-->
+
+    <!--다이얼로그 둥글게 안된다..? 왜지-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/corner_4_round"
+        android:orientation="vertical">
+
+        <!--따옴표 들어가야함-->
+        <View
+            android:id="@+id/double_quot"
+            android:layout_width="335dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="10dp">
+
+        </View>
+
+        <TextView
+            android:id="@+id/result_Text_box"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:gravity="center"
+            android:text="hi"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+
+        <Button
+            android:id="@+id/replay_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="@color/second_button"
+            android:text="다시보기"
+            app:icon="@android:drawable/ic_lock_silent_mode_off" />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

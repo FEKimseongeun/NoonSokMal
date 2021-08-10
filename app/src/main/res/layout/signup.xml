@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:elevation="20dp"
+            android:src="@drawable/logo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/corner_round"
+            android:backgroundTint="@color/first_background"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="100dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/id"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/id_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:layout_marginBottom="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/password"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/password_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/black"
+                    android:password="true"
+                    tools:ignore="Deprecated" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="비밀번호 확인"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/password_content_check"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:layout_marginBottom="10dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="- - - - - - - - - - - - - - - - - - - - - - 정보 입력  - - - - - - - - - - - - - - - - - - - - -"
+                android:textColor="#80000000" />
+
+            <ScrollView
+                android:scrollbarSize="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="100dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="이름"
+                        android:textColor="@color/black" />
+
+                    <EditText
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/name_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/black"
+                        android:layout_marginBottom="10dp" />
+
+                    <TextView
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="생년월일"
+                        android:textColor="@color/black" />
+
+                    <DatePicker
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:calendarViewShown="false"
+                        android:datePickerMode="spinner" />
+
+
+                    <TextView
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="휴대전화"
+                        android:textColor="@color/black" />
+
+                    <EditText
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/Phone_number_content"
+                        android:backgroundTint="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:inputType="number" />
+
+                    <TextView
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="난청정도"
+                        android:textColor="@color/black" />
+
+                    <Spinner
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/loss_degree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/black"
+                        android:layout_weight="1" />
+
+
+                    <LinearLayout
+                        android:id="@+id/signup_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="70dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/corner_2_round"
+                        android:backgroundTint="@color/white">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="50dp"
+                            android:gravity="center|right"
+                            android:text="@string/signup"
+                            android:textColor="@color/black"
+                            android:textSize="23dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

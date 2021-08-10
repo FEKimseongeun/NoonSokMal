@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="loss_degree">
+        <item>정상 0~20dB</item>
+        <item>경도 21~40dB</item>
+        <item>중도 41~55dB</item>
+        <item>중고도 56~70dB</item>
+        <item>고도 71~90dB</item>
+        <item>심도 91dB~</item>
+    </string-array>
+
+</resources>
