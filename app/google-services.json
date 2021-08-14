@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "742389058315",
+    "project_id": "noonsokmal",
+    "storage_bucket": "noonsokmal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742389058315:android:9fa5e27509bb548adeb00e",
+        "android_client_info": {
+          "package_name": "com.example.noonsokmal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "742389058315-8bnlmnkphvl1ugagm0m5ntmr3lq5edis.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmuHt7Mx81aBQ7P1L02ckXnRB_3dBiBws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "742389058315-8bnlmnkphvl1ugagm0m5ntmr3lq5edis.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
