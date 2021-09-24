@@ -8,8 +8,12 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import kotlinx.android.synthetic.main.navi_header.*
 import kotlinx.android.synthetic.main.signup.*
+
 
 class SignUpActivity : AppCompatActivity() {
     var ID_join: EditText? = null
@@ -18,10 +22,16 @@ class SignUpActivity : AppCompatActivity() {
     var phone_join: EditText? = null
     var btn: LinearLayout? = null
     var firebaseAuth: FirebaseAuth? = null
+    var spinner : Spinner? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.signup)
+
+
+        firebaseAuth =  FirebaseAuth.getInstance()
+
 
         //loss_degree Spinner
         val degreeSpinner: Spinner = findViewById(R.id.loss_degree)
@@ -41,6 +51,7 @@ class SignUpActivity : AppCompatActivity() {
         phone_join = findViewById<View>(R.id.Phone_number_content) as EditText
         btn = findViewById<View>(R.id.signup_button) as LinearLayout
         firebaseAuth = FirebaseAuth.getInstance()
+        spinner = findViewById<View>(R.id.loss_degree) as Spinner
 
         //비밀번호 일치 여부 확인
         password_content_check.addTextChangedListener(object : TextWatcher {
@@ -62,12 +73,12 @@ class SignUpActivity : AppCompatActivity() {
             val id = ID_join!!.text.toString().trim { it <= ' ' }
             val pwd = pwd_join!!.text.toString().trim { it <= ' ' }
             val name = name_join!!.text.toString().trim { it <= ' ' }
-            val phone = phone_join!!.text.toString().trim { it <= ' ' }
+            val spinner = spinner!!.selectedItem.toString().trim { it <= ' ' }
             //공백인 부분을 제거하고 보여주는 trim();
 
             firebaseAuth!!.createUserWithEmailAndPassword(id, pwd)
                 .addOnCompleteListener(this@SignUpActivity,
-                    OnCompleteListener { task ->
+                    OnCompleteListener <AuthResult>(){ task ->
                         if(password_check_txt.getText().toString().equals("일치하지 않습니다")){
                             Toast.makeText(this@SignUpActivity, "비밀번호가 일치하지 않습니다", Toast.LENGTH_SHORT)
                                 .show()
@@ -76,7 +87,17 @@ class SignUpActivity : AppCompatActivity() {
                         else {
                             if (task.isSuccessful) { //성공시 로그인화면으로 이동
                                 Toast.makeText(this, "${id}님 회원가입 되었습니다.", Toast.LENGTH_SHORT).show()
+                                val hashMap: HashMap<Any, String> = HashMap()
+                                hashMap["email"] = id
+                                hashMap["pwd"] = pwd
+                                hashMap["spinner"] = spinner
+                                hashMap["name"] = name
+                                val database = FirebaseDatabase.getInstance()
+                                val reference = database.getReference("Users")
+                                reference.child(pwd).setValue(hashMap)
+
                                 val intent = Intent(this@SignUpActivity, LoginActivity::class.java)
+                                //intent.putExtra("loss_degree", spinner)
                                 startActivity(intent)
                                 finish()
                             } else {
@@ -87,5 +108,9 @@ class SignUpActivity : AppCompatActivity() {
                     })
 
         }
+    }
+    public fun getUserName(): String {
+        val name = name_join!!.text.toString().trim { it <= ' ' }
+        return name
     }
 }

@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="450dp"
     tools:context=".HearingResultActivity">
+
     <!--비청각장애인 결과 도출화면-->
 
     <!--다이얼로그 둥글게 안된다..? 왜지-->
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:backgroundTint="@color/white"
         android:background="@drawable/corner_4_round"
         android:orientation="vertical">
+
 
         <!--따옴표 들어가야함-->
         <View
@@ -32,6 +37,7 @@
             android:layout_height="60dp"
             android:layout_marginLeft="35dp"
             android:layout_marginRight="35dp"
+            android:layout_marginTop="80dp"
             android:gravity="center"
             android:text="hi"
             android:textColor="@color/black"
@@ -42,7 +48,7 @@
             android:id="@+id/replay_button"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="170dp"
             android:layout_marginLeft="35dp"
             android:layout_marginRight="35dp"
             android:layout_marginBottom="30dp"
@@ -51,7 +57,7 @@
             app:icon="@android:drawable/ic_lock_silent_mode_off" />
 
 
+    </RelativeLayout>
 
-    </LinearLayout>
 
-</LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

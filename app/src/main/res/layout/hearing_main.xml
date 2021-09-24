@@ -1,33 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".HearingActivity">
-    <!--비청각장애인 메인화면-->
 
-    <FrameLayout
+    <!--비청각장애인 메인화면-->
+    <RelativeLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <VideoView
-            android:id="@+id/videoView"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/play_Start_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="300dp"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/third_background" />
+            <ImageView
+                android:id="@+id/drawer_open_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/w" />
 
-    </FrameLayout>
+            <LinearLayout
+                android:id="@+id/surfaceView"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="580dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="10dp">
+            </LinearLayout>
 
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_height="match_parent">
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/play_Start_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="300dp"
+                    android:src="@drawable/play_button"
+                    android:backgroundTint="@color/third_background"
+                    android:onClick="onButton_start"
+                    tools:ignore="OnClick" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/play_End_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="300dp"
+                    android:src="@drawable/stop_button"
+                    android:backgroundTint="@color/third_background"
+                    android:onClick="onButton_end"
+                    tools:ignore="OnClick" />
+            </LinearLayout>
 
 
+        </FrameLayout>
+    </RelativeLayout>
+    <!--드로어 화면이 될 Layout-->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/navi_header">
 
-</LinearLayout>
+        <include layout="@layout/activity_left_drawer" />
+    </com.google.android.material.navigation.NavigationView>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

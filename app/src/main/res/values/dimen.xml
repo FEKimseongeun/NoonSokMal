@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="background1">100dp</dimen>
+    <dimen name="background2">200dp</dimen>
+</resources>

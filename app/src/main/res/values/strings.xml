@@ -4,4 +4,8 @@
     <string name="signup">회원가입</string>
     <string name="id">이메일</string>
     <string name="password">비밀번호</string>
+    <string name="action_btn1">기록</string>
+    <string name="action_btn2">수어 단어장</string>
+    <string name="action_btn3">수어 학습</string>
+    <string name="action_btn4">외국어 번역</string>
 </resources>

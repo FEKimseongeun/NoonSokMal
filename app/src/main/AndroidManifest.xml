@@ -1,23 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.noonsokmal">
 
-    <!-- 음성인식 권한 -->
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <!-- 카메라 권한 -->
+
+    <!-- 카메라 권한1 -->
     <uses-feature
         android:name="android.hardware.camera2"
         android:required="true"/>
     <!-- 인터넷 권한 -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 카메라 권한2 -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+
 
     <application
+        android:largeHeap="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/SplashTheme">
+        android:theme="@style/Theme.NoonSokMal"
+        tools:replace="android:appComponentFactory"
+        android:appComponentFactory="whateverString">
 
         <activity android:name=".MainActivity">
 
@@ -55,6 +65,14 @@
         </activity>
 
         <activity android:name=".NoHearingResultActivity">
+
+        </activity>
+
+        <activity android:name=".Black_pink">
+
+        </activity>
+
+        <activity android:name=".Black_yellow">
 
         </activity>
 
